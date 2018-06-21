@@ -6,9 +6,9 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.sergio.api.v1.mapper.CustomerMapper;
-import com.sergio.api.v1.model.CustomerDTO;
 import com.sergio.controllers.v1.CustomerController;
 import com.sergio.domain.Customer;
+import com.sergio.model.CustomerDTO;
 import com.sergio.repositories.CustomerRepository;
 
 @Service

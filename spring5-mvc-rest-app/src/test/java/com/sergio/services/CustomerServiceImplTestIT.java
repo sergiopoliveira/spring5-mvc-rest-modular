@@ -16,9 +16,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.sergio.api.v1.mapper.CustomerMapper;
-import com.sergio.api.v1.model.CustomerDTO;
 import com.sergio.bootstrap.Bootstrap;
 import com.sergio.domain.Customer;
+import com.sergio.model.CustomerDTO;
 import com.sergio.repositories.CategoryRepository;
 import com.sergio.repositories.CustomerRepository;
 import com.sergio.repositories.VendorRepository;

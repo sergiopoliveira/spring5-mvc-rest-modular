@@ -2,7 +2,9 @@ package com.sergio.service;
 
 import java.util.List;
 
-import com.sergio.api.v1.model.CustomerDTO;
+import com.sergio.model.CustomerDTO;
+
+
 
 public interface CustomerService {
 

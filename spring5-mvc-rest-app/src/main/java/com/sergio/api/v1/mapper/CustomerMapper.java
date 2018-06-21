@@ -3,8 +3,8 @@ package com.sergio.api.v1.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import com.sergio.api.v1.model.CustomerDTO;
 import com.sergio.domain.Customer;
+import com.sergio.model.CustomerDTO;
 
 @Mapper
 public interface CustomerMapper {

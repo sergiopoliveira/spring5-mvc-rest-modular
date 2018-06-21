@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.sergio.api.v1.model.CustomerDTO;
 import com.sergio.domain.Customer;
+import com.sergio.model.CustomerDTO;
 
 public class CustomerMapperTest {
 

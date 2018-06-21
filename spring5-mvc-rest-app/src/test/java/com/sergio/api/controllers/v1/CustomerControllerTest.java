@@ -25,10 +25,10 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.sergio.api.v1.model.CustomerDTO;
 import com.sergio.controllers.v1.CategoryController;
 import com.sergio.controllers.v1.CustomerController;
 import com.sergio.controllers.v1.RestResponseEntityExceptionHandler;
+import com.sergio.model.CustomerDTO;
 import com.sergio.service.CustomerService;
 import com.sergio.service.ResourceNotFoundException;
 

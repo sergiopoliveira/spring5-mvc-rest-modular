@@ -3,9 +3,9 @@ package com.sergio.services;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,9 +17,9 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.sergio.api.v1.mapper.CustomerMapper;
-import com.sergio.api.v1.model.CustomerDTO;
 import com.sergio.controllers.v1.CustomerController;
 import com.sergio.domain.Customer;
+import com.sergio.model.CustomerDTO;
 import com.sergio.repositories.CustomerRepository;
 import com.sergio.service.CustomerService;
 import com.sergio.service.CustomerServiceImpl;
