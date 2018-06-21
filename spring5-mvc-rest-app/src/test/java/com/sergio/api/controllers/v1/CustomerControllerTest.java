@@ -103,7 +103,7 @@ public class CustomerControllerTest {
 		returnDTO.setLastname(customerDTO.getLastname());
 		returnDTO.setCustomerUrl(CustomerController.BASE_URL + "/1");
 		
-		when(customerService.createNewCustomer(customerDTO)).thenReturn(returnDTO);
+		when(customerService.createNewCustomer(any())).thenReturn(returnDTO);
 		
 		mockMvc.perform(post(CustomerController.BASE_URL)
 				.contentType(MediaType.APPLICATION_JSON)
@@ -111,7 +111,7 @@ public class CustomerControllerTest {
 				.content(AbstractRestControllerTest.asJsonString(customerDTO)))
 		.andExpect(status().isCreated())
 		.andExpect(jsonPath("$.firstname", equalTo(FIRSTNAME)))
-		.andExpect(jsonPath("$.customer_url", equalTo(CustomerController.BASE_URL + "/1")));
+		.andExpect(jsonPath("$.customerUrl", equalTo(CustomerController.BASE_URL + "/1")));
 	}
 	
 	@Test
@@ -135,7 +135,7 @@ public class CustomerControllerTest {
 		.andExpect(status().isOk())
 		.andExpect(jsonPath("$.firstname", equalTo(FIRSTNAME)))
 		.andExpect(jsonPath("$.lastname", equalTo(LASTNAME)))
-		.andExpect(jsonPath("$.customer_url", equalTo(CustomerController.BASE_URL + "/1")));
+		.andExpect(jsonPath("$.customerUrl", equalTo(CustomerController.BASE_URL + "/1")));
 	}
 	
 	@Test
@@ -159,7 +159,7 @@ public class CustomerControllerTest {
 		.andExpect(status().isOk())
 		.andExpect(jsonPath("$.firstname", equalTo(FIRSTNAME)))
 		.andExpect(jsonPath("$.lastname", equalTo(LASTNAME)))
-		.andExpect(jsonPath("$.customer_url", equalTo(CustomerController.BASE_URL + "/1")));
+		.andExpect(jsonPath("$.customerUrl", equalTo(CustomerController.BASE_URL + "/1")));
 	}
 	
 	@Test
