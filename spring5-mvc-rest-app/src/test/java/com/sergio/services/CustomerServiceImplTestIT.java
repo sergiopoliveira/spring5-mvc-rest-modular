@@ -21,6 +21,7 @@ import com.sergio.domain.Customer;
 import com.sergio.model.CustomerDTO;
 import com.sergio.repositories.CategoryRepository;
 import com.sergio.repositories.CustomerRepository;
+import com.sergio.repositories.ProductRepository;
 import com.sergio.repositories.VendorRepository;
 import com.sergio.service.CustomerService;
 import com.sergio.service.CustomerServiceImpl;
@@ -37,6 +38,9 @@ public class CustomerServiceImplTestIT {
 	
 	@Autowired
 	VendorRepository vendorRepository;
+	
+	@Autowired
+	ProductRepository productRepository;
 
 	CustomerService customerService;
 
@@ -46,7 +50,7 @@ public class CustomerServiceImplTestIT {
 		System.out.println(customerRepository.findAll().size());
 
 		// setup data for testing
-		Bootstrap bootstrap = new Bootstrap(categoryRepository, customerRepository, vendorRepository);
+		Bootstrap bootstrap = new Bootstrap(categoryRepository, customerRepository, vendorRepository, productRepository);
 		bootstrap.run(); // load data
 
 		customerService = new CustomerServiceImpl(CustomerMapper.INSTANCE, customerRepository);

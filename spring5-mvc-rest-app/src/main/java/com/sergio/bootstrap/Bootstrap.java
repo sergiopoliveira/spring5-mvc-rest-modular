@@ -5,9 +5,11 @@ import org.springframework.stereotype.Component;
 
 import com.sergio.domain.Category;
 import com.sergio.domain.Customer;
+import com.sergio.domain.Product;
 import com.sergio.domain.Vendor;
 import com.sergio.repositories.CategoryRepository;
 import com.sergio.repositories.CustomerRepository;
+import com.sergio.repositories.ProductRepository;
 import com.sergio.repositories.VendorRepository;
 
 // CommandLineRunner is Spring Boot specific which allows to run
@@ -18,12 +20,14 @@ public class Bootstrap implements CommandLineRunner {
 	private CategoryRepository categoryRepository;
 	private CustomerRepository customerRepository;
 	private VendorRepository vendorRepository;
+	private ProductRepository productRepository;
 
 	public Bootstrap(CategoryRepository categoryRepository, CustomerRepository customerRepository,
-			VendorRepository vendorRepository) {
+			VendorRepository vendorRepository, ProductRepository productRepository) {
 		this.categoryRepository = categoryRepository;
 		this.customerRepository = customerRepository;
 		this.vendorRepository = vendorRepository;
+		this.productRepository = productRepository;
 	}
 
 	@Override
@@ -32,6 +36,15 @@ public class Bootstrap implements CommandLineRunner {
 		loadCategories();
 		loadCustomers();
 		loadVendors();
+		loadProducts();
+	}
+
+	private void loadProducts() {
+		Product pineapples = new Product();
+		pineapples.setName("Pineapples");
+		
+		productRepository.save(pineapples);
+		System.out.println("Data Loaded for Products: " + productRepository.count());
 	}
 
 	private void loadCategories() {
