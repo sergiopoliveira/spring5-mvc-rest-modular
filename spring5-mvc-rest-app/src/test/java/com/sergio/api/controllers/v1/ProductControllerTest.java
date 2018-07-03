@@ -51,7 +51,7 @@ public class ProductControllerTest {
 		product1.setName(NAME);
 		
 		ProductDTO product2 = new ProductDTO();
-		product2.setName("Factory Inc");
+		product2.setName("Apple");
 		
 		List<ProductDTO> products = Arrays.asList(product1, product2);
 		
