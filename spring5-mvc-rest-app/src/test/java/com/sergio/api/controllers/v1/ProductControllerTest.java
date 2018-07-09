@@ -25,7 +25,7 @@ import com.sergio.service.ProductService;
 
 public class ProductControllerTest {
 
-	private static final Long ID = 1L;
+//	private static final Long ID = 1L;
 	private static final String NAME = "Pineapple";
 	
 	@Mock
@@ -53,7 +53,10 @@ public class ProductControllerTest {
 		ProductDTO product2 = new ProductDTO();
 		product2.setName("Apple");
 		
-		List<ProductDTO> products = Arrays.asList(product1, product2);
+		ProductDTO product3 = new ProductDTO();
+		product3.setName("Pen");
+		
+		List<ProductDTO> products = Arrays.asList(product1, product2, product3);
 		
 		when(productService.getAllProducts()).thenReturn(products);
 		
@@ -61,6 +64,6 @@ public class ProductControllerTest {
 				.contentType(MediaType.APPLICATION_JSON)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.products", hasSize(2)));
+				.andExpect(jsonPath("$.products", hasSize(3)));
 	}
 }
